@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background:linear-gradient(to right, skyblue, hotpink, rgb(46, 139, 46));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height:100vh;
+    overflow: hidden;
+}
+
+.clock {
+    width: 300px;
+    height: 300px;
+    background-color:white;
+    border-radius: 50%;
+    position: relative;
+    border:2px solid black;
+    filter:drop-shadow(5px 10px 7px  chocolate); 
+
+    
+}
+
+
+.number {
+    position: absolute;
+    width: 100%;
+    height:100%;
+    text-align: center;
+    transform: rotate(var(--rotation));
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.number1 {--rotation: 30deg;}
+.number2 {--rotation: 60deg;}
+.number3 {--rotation: 90deg;}
+.number4 {--rotation: 120deg;}
+.number5 {--rotation: 150deg;}
+.number6 {--rotation: 180deg;}
+.number7 {--rotation: 210deg;}
+.number8 {--rotation: 240deg;}
+.number9 {--rotation: 270deg;}
+.number10 {--rotation: 300deg;}
+.number11 {--rotation: 330deg;}
+.number12 {--rotation: 360deg;}
+
+
+.hand {
+    --rotation: 0;
+    height: 50%;
+    width:10px;
+    position: absolute;
+    background: black;
+    left:50%;
+    bottom:50%;
+    transform:translateX(-50%)  rotate(calc(var(--rotation) * 1deg));
+    transform-origin: bottom;
+    z-index: 10;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+
+}
+
+.clock::after{
+    content: "";
+    background-color: black;
+    position:absolute;
+    left:50%;
+    top:50%;
+    width: 15px;
+    height: 15px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 11;
+
+}
+
+.second {
+    height:45%;
+    width: 3px;
+    background:red;
+}
+
+.munite{
+    height:40%;
+    width: 7px;
+    background:black;
+}
+
+.hour{
+    height:35%;
+    width: 10px;
+    background:black;
+
+}
+
+.currentdate {
+    width: 100px;
+    height: 25px;
+   background-color:rgba(0, 0, 0, 0.205) ;
+    
+    position: absolute;
+    top:80%;
+    left:35%;
+    color:chocolate;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 10px;
+    
+}
